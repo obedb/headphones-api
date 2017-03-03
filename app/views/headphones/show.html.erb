@@ -1,0 +1,16 @@
+
+
+<div ng-app="app">
+
+  <div ng-controller="headphonesCtrl" ng-init="view()">
+    <div ng-repeat="headphone in headphones">
+      {{headphone.name}}
+      {{headphone.model}}
+
+      <button ng-click="deleteHeadphone(headphone, $index)">Delete Headphone</button>
+
+
+      </div>
+    </div>
+   
+      

@@ -1,0 +1,35 @@
+<div ng-app="app">
+
+  <div ng-controller="headphonesCtrl" ng-init="setup()">
+    <p></p>
+    Filter Headphones: <input ng-model="filterQuery">
+    <h1>Number of Headphones: {{headphones.length}}</h1>
+    <table border="1">
+      <tr>
+
+        <th ng-click="toggleOrder('name')"> Name</th> 
+        <th ng-click="toggleOrder('model')"> Model</th>
+      </tr>
+      <tr>
+        <td><div ng-repeat="headphone in headphones | filter: filterQuery | orderBy:orderAttribute:false">
+          {{headphone.name}}</td>>
+          <td> <div ng-repeat="headphone in headphones | filter: filterQuery | orderBy:orderAttribute:descending">
+          {{headphone.model}}</td>>
+        </tr>
+
+
+      </table>
+
+      <!-- <button ng-click="deleteHeadphone(headphone, $index)">Delete Headphone</button> -->
+
+
+    </div>
+  </div>
+  Add Headphone:
+  <div>
+    Name: <input ng-model="headphoneName">
+    Model: <input ng-model="headphoneModel">
+    <button ng-click="addHeadphone(HeadphoneName, headphoneModel)">Add Headphone</button>
+  </div>
+</div>
+</div>
